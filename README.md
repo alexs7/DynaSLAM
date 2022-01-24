@@ -1,3 +1,28 @@
+# DynaSLAM - Alex
+
+In this section please find the steps I have to follow to compile DynaSLAM.
+The next section contains the vanillia docs from the original repo.
+
+A blog that help me get started was this one:
+[https://www.ybliu.com/2020/05/how-to-use-dynaslam-using-docker.html](https://www.ybliu.com/2020/05/how-to-use-dynaslam-using-docker.html)
+And this video helps too: https://www.youtube.com/watch?v=qRhFgEIRs_s
+
+- For ORB-SLAM2 you will need to use my fork: [https://github.com/alexs7/ORB_SLAM2/tree/dynaSLAM_compatible](https://github.com/alexs7/ORB_SLAM2/tree/dynaSLAM_compatible)
+- Similarly for OpenCV: [https://github.com/alexs7/opencv/tree/dynaSLAM_compatible](https://github.com/alexs7/opencv/tree/dynaSLAM_compatible)
+- For Pangolin same too: [https://github.com/alexs7/Pangolin/tree/dynaSLAM_compatible](https://github.com/alexs7/Pangolin/tree/dynaSLAM_compatible)
+Follow for each repo above the default instructions to install.
+
+For keras, tensoflow, numpy and python please use these versions
+
+- keras = 2.1.6
+- tensorflow = 1.13.1
+- numpy = 1.16.6
+- python = 2.7
+
+And that's it! You should install DynaSLAM with no issues, by following the rest of the default instructions.
+
+PS: I did not get the inpainting working - I think it is not released - please let me know if you get it working.
+
 # DynaSLAM
 
 [[Project]](https://bertabescos.github.io/DynaSLAM/)   [[arXiv]](https://arxiv.org/abs/1806.05620)   [[Journal]](https://ieeexplore.ieee.org/document/8421015)
@@ -18,7 +43,7 @@ We provide examples to run the SLAM system in the [TUM dataset](http://projects.
 ## Getting Started
 - Install ORB-SLAM2 prerequisites: C++11 or C++0x Compiler, Pangolin, OpenCV and Eigen3  (https://github.com/raulmur/ORB_SLAM2).
 - Install boost libraries with the command `sudo apt-get install libboost-all-dev`.
-- Install python 2.7, keras and tensorflow, and download the `mask_rcnn_coco.h5` model from this GitHub repository: https://github.com/matterport/Mask_RCNN/releases. 
+- Install python 2.7, keras and tensorflow, and download the `mask_rcnn_coco.h5` model from this GitHub repository: https://github.com/matterport/Mask_RCNN/releases.
 - Clone this repo:
 ```bash
 git clone https://github.com/BertaBescos/DynaSLAM.git
@@ -46,15 +71,15 @@ These associations files are given in the folder `./Examples/RGB-D/associations/
   ```
   ./Examples/RGB-D/rgbd_tum Vocabulary/ORBvoc.txt Examples/RGB-D/TUMX.yaml PATH_TO_SEQUENCE_FOLDER ASSOCIATIONS_FILE (PATH_TO_MASKS) (PATH_TO_OUTPUT)
   ```
-  
-If `PATH_TO_MASKS` and `PATH_TO_OUTPUT` are **not** provided, only the geometrical approach is used to detect dynamic objects. 
+
+If `PATH_TO_MASKS` and `PATH_TO_OUTPUT` are **not** provided, only the geometrical approach is used to detect dynamic objects.
 
 If `PATH_TO_MASKS` is provided, Mask R-CNN is used to segment the potential dynamic content of every frame. These masks are saved in the provided folder `PATH_TO_MASKS`. If this argument is `no_save`, the masks are used but not saved. If it finds the Mask R-CNN computed dynamic masks in `PATH_TO_MASKS`, it uses them but does not compute them again.
 
 If `PATH_TO_OUTPUT` is provided, the inpainted frames are computed and saved in `PATH_TO_OUTPUT`.
 
 ## Stereo Example on KITTI Dataset
-- Download the dataset (grayscale images) from http://www.cvlibs.net/datasets/kitti/eval_odometry.php 
+- Download the dataset (grayscale images) from http://www.cvlibs.net/datasets/kitti/eval_odometry.php
 
 - Execute the following command. Change `KITTIX.yaml`to KITTI00-02.yaml, KITTI03.yaml or KITTI04-12.yaml for sequence 0 to 2, 3, and 4 to 12 respectively. Change `PATH_TO_DATASET_FOLDER` to the uncompressed dataset folder. Change `SEQUENCE_NUMBER` to 00, 01, 02,.., 11. By providing the last argument `PATH_TO_MASKS`, dynamic objects are detected with Mask R-CNN.
 ```
@@ -70,7 +95,7 @@ If `PATH_TO_OUTPUT` is provided, the inpainted frames are computed and saved in 
 ```
 
 ## Monocular Example on KITTI Dataset
-- Download the dataset (grayscale images) from http://www.cvlibs.net/datasets/kitti/eval_odometry.php 
+- Download the dataset (grayscale images) from http://www.cvlibs.net/datasets/kitti/eval_odometry.php
 
 - Execute the following command. Change `KITTIX.yaml`by KITTI00-02.yaml, KITTI03.yaml or KITTI04-12.yaml for sequence 0 to 2, 3, and 4 to 12 respectively. Change `PATH_TO_DATASET_FOLDER` to the uncompressed dataset folder. Change `SEQUENCE_NUMBER` to 00, 01, 02,.., 11. By providing the last argument `PATH_TO_MASKS`, dynamic objects are detected with Mask R-CNN.
 ```
