@@ -10,6 +10,7 @@ And this video helps too: https://www.youtube.com/watch?v=qRhFgEIRs_s
 - For ORB-SLAM2 you will need to use my fork: [https://github.com/alexs7/ORB_SLAM2/tree/dynaSLAM_compatible](https://github.com/alexs7/ORB_SLAM2/tree/dynaSLAM_compatible)
 - Similarly for OpenCV: [https://github.com/alexs7/opencv/tree/dynaSLAM_compatible](https://github.com/alexs7/opencv/tree/dynaSLAM_compatible)
 - For Pangolin same too: [https://github.com/alexs7/Pangolin/tree/dynaSLAM_compatible](https://github.com/alexs7/Pangolin/tree/dynaSLAM_compatible)
+
 Follow for each repo above the default instructions to install.
 
 For keras, tensoflow, numpy and python please use these versions
