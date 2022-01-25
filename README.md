@@ -1,6 +1,7 @@
 # DynaSLAM - Alex
 
 In this section please find the steps I have to follow to compile DynaSLAM.
+All the steps were replicated on a clean Ubuntu 18.04 machine.
 The next section contains the vanillia docs from the original repo.
 
 A blog that help me get started was this one:
